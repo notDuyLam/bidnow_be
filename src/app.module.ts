@@ -13,6 +13,13 @@ import { Watchlist } from './entities/watchlist.entity';
 import { Notification } from './entities/notification.entity';
 import { SystemEvent } from './entities/system-event.entity';
 import { UsersModule } from './users/users.module';
+import { ItemsModule } from './items/items.module';
+import { AuctionsModule } from './auctions/auctions.module';
+import { BidsModule } from './bids/bids.module';
+import { WatchlistsModule } from './watchlists/watchlists.module';
+import { NotificationsModule } from './notifications/notifications.module';
+import { SystemEventsModule } from './system-events/system-events.module';
+import { SessionsModule } from './sessions/sessions.module';
 
 @Module({
   imports: [
@@ -41,6 +48,13 @@ import { UsersModule } from './users/users.module';
     }),
     TypeOrmModule.forFeature([User, UserProfile, Session, Item, Auction, Bid, Watchlist, Notification, SystemEvent]),
     UsersModule,
+    ItemsModule,
+    AuctionsModule,
+    BidsModule,
+    WatchlistsModule,
+    NotificationsModule,
+    SystemEventsModule,
+    SessionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
