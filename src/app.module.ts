@@ -12,6 +12,7 @@ import { Bid } from './entities/bid.entity';
 import { Watchlist } from './entities/watchlist.entity';
 import { Notification } from './entities/notification.entity';
 import { SystemEvent } from './entities/system-event.entity';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { SystemEvent } from './entities/system-event.entity';
       },
     }),
     TypeOrmModule.forFeature([User, UserProfile, Session, Item, Auction, Bid, Watchlist, Notification, SystemEvent]),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
