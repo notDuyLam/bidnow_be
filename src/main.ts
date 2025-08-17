@@ -24,6 +24,15 @@ async function bootstrap() {
   SwaggerModule.setup('docs', app, swaggerDocument, {
     swaggerOptions: { persistAuthorization: true },
   });
-  await app.listen(process.env.PORT ?? 3000);
+
+  const port = process.env.PORT ?? 3000;
+  await app.listen(port);
+
+  // Console log application information
+  console.log('🚀 BidNow Backend is running!');
+  console.log(`📱 Application: http://localhost:${port}`);
+  console.log(`📚 Swagger API Documentation: http://localhost:${port}/docs`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log('=====================================');
 }
 bootstrap();
